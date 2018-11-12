@@ -1,0 +1,555 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="每次ctf比赛后的收获, L0ner&#39;s blogs">
+    <meta name="description" content="每个比赛都能见到很多新奇的东西和新的思路，新的解题方法，新的工具，收获挺多的（还有很多对自己菜狗的吐槽）。所以想记录下来。详细的wp我都收藏在另一篇博文里了。长期更新。
+misc
+easy dump（来自2018HCTF）easy dump">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>每次ctf比赛后的收获 | L0ner&#39;s blogs</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">L0ner's blogs</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">L0ner's blogs</div>
+        <div class="logo-desc">
+            
+            Believe myself !
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"></div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        每次ctf比赛后的收获
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/赛后收获/" class="post-category" target="_blank">
+                        赛后收获
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-11-12
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>每个比赛都能见到很多新奇的东西和新的思路，新的解题方法，新的工具，收获挺多的（还有很多对自己菜狗的吐槽）。所以想记录下来。详细的wp我都收藏在<a href="http://baimaozi.top/2018/11/12/collect-wp/">另一篇博文</a>里了。<br>长期更新。</p>
+<h2 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h2><hr>
+<h3 id="easy-dump（来自2018HCTF）"><a href="#easy-dump（来自2018HCTF）" class="headerlink" title="easy dump（来自2018HCTF）"></a>easy dump（来自2018HCTF）</h3><p><a href="https://pan.baidu.com/s/1ntJWNs9OWD-4_QHhbkxpzw" target="_blank" rel="noopener">easy dump</a>是一道内存的取证分析题，使用到的工具有volatility和<code>GIMP</code>。比赛时我已经做到提取出mspaint.exe的dmp文件这一步了，下一步我没想（google）到该怎么做，用什么工具做，就很气！现在看了wp后就要记笔记了。<br>用的是<code>GIMP</code>这个工具，使用步骤<code>File-&gt;Open-&gt;Select File Type-&gt;Raw image data</code>，来打开提取出的dmp文件，然后修改相应的参数（这一题修改参数为Image Type：RGB Alpha，Offset=152650653，Width=1457，Height=500）。<br>工具的操作挺烦的，这个<code>GIMP</code>摸索了很久，又是一个巨坑！<br>其次我觉得找参数这种挺看运气的，毕竟太多了，一个一个试太浪费时间，而且还没提示。</p>
+<h3 id="difficult-programming-language（来自2018HCTF）"><a href="#difficult-programming-language（来自2018HCTF）" class="headerlink" title="difficult programming language（来自2018HCTF）"></a>difficult programming language（来自2018HCTF）</h3><p><a href="https://pan.baidu.com/s/1s2vi0eVmkD74uJoCIxnyHA" target="_blank" rel="noopener">difficult programming language</a>是一道usb的流量分析，比赛之前我没见过这类型的流量分析（孤陋寡闻了），然后一直google相关的题型来看。<br>大致就是提取出键盘或鼠标的流量，然后用脚本转成相应的“输入”出来，键盘的输入是字符（一般就是flag），鼠标的输入一般是图片（用鼠标画出flag）。贴一下现成的键盘脚本和<a href="https://www.usb.org/sites/default/files/documents/hut1_12v2.pdf" target="_blank" rel="noopener">usb官方文档</a>，以后能直接用了：</p>
+<pre class=" language-javascript"><code class="language-javascript">normalKeys <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"04"</span><span class="token punctuation">:</span><span class="token string">"a"</span><span class="token punctuation">,</span> <span class="token string">"05"</span><span class="token punctuation">:</span><span class="token string">"b"</span><span class="token punctuation">,</span> <span class="token string">"06"</span><span class="token punctuation">:</span><span class="token string">"c"</span><span class="token punctuation">,</span> <span class="token string">"07"</span><span class="token punctuation">:</span><span class="token string">"d"</span><span class="token punctuation">,</span> <span class="token string">"08"</span><span class="token punctuation">:</span><span class="token string">"e"</span><span class="token punctuation">,</span> <span class="token string">"09"</span><span class="token punctuation">:</span><span class="token string">"f"</span><span class="token punctuation">,</span> <span class="token string">"0a"</span><span class="token punctuation">:</span><span class="token string">"g"</span><span class="token punctuation">,</span> <span class="token string">"0b"</span><span class="token punctuation">:</span><span class="token string">"h"</span><span class="token punctuation">,</span> <span class="token string">"0c"</span><span class="token punctuation">:</span><span class="token string">"i"</span><span class="token punctuation">,</span> <span class="token string">"0d"</span><span class="token punctuation">:</span><span class="token string">"j"</span><span class="token punctuation">,</span> <span class="token string">"0e"</span><span class="token punctuation">:</span><span class="token string">"k"</span><span class="token punctuation">,</span> <span class="token string">"0f"</span><span class="token punctuation">:</span><span class="token string">"l"</span><span class="token punctuation">,</span> <span class="token string">"10"</span><span class="token punctuation">:</span><span class="token string">"m"</span><span class="token punctuation">,</span> <span class="token string">"11"</span><span class="token punctuation">:</span><span class="token string">"n"</span><span class="token punctuation">,</span> <span class="token string">"12"</span><span class="token punctuation">:</span><span class="token string">"o"</span><span class="token punctuation">,</span> <span class="token string">"13"</span><span class="token punctuation">:</span><span class="token string">"p"</span><span class="token punctuation">,</span> <span class="token string">"14"</span><span class="token punctuation">:</span><span class="token string">"q"</span><span class="token punctuation">,</span> <span class="token string">"15"</span><span class="token punctuation">:</span><span class="token string">"r"</span><span class="token punctuation">,</span> <span class="token string">"16"</span><span class="token punctuation">:</span><span class="token string">"s"</span><span class="token punctuation">,</span> <span class="token string">"17"</span><span class="token punctuation">:</span><span class="token string">"t"</span><span class="token punctuation">,</span> <span class="token string">"18"</span><span class="token punctuation">:</span><span class="token string">"u"</span><span class="token punctuation">,</span> <span class="token string">"19"</span><span class="token punctuation">:</span><span class="token string">"v"</span><span class="token punctuation">,</span> <span class="token string">"1a"</span><span class="token punctuation">:</span><span class="token string">"w"</span><span class="token punctuation">,</span> <span class="token string">"1b"</span><span class="token punctuation">:</span><span class="token string">"x"</span><span class="token punctuation">,</span> <span class="token string">"1c"</span><span class="token punctuation">:</span><span class="token string">"y"</span><span class="token punctuation">,</span> <span class="token string">"1d"</span><span class="token punctuation">:</span><span class="token string">"z"</span><span class="token punctuation">,</span><span class="token string">"1e"</span><span class="token punctuation">:</span><span class="token string">"1"</span><span class="token punctuation">,</span> <span class="token string">"1f"</span><span class="token punctuation">:</span><span class="token string">"2"</span><span class="token punctuation">,</span> <span class="token string">"20"</span><span class="token punctuation">:</span><span class="token string">"3"</span><span class="token punctuation">,</span> <span class="token string">"21"</span><span class="token punctuation">:</span><span class="token string">"4"</span><span class="token punctuation">,</span> <span class="token string">"22"</span><span class="token punctuation">:</span><span class="token string">"5"</span><span class="token punctuation">,</span> <span class="token string">"23"</span><span class="token punctuation">:</span><span class="token string">"6"</span><span class="token punctuation">,</span><span class="token string">"24"</span><span class="token punctuation">:</span><span class="token string">"7"</span><span class="token punctuation">,</span><span class="token string">"25"</span><span class="token punctuation">:</span><span class="token string">"8"</span><span class="token punctuation">,</span><span class="token string">"26"</span><span class="token punctuation">:</span><span class="token string">"9"</span><span class="token punctuation">,</span><span class="token string">"27"</span><span class="token punctuation">:</span><span class="token string">"0"</span><span class="token punctuation">,</span><span class="token string">"28"</span><span class="token punctuation">:</span><span class="token string">"&lt;RET>"</span><span class="token punctuation">,</span><span class="token string">"29"</span><span class="token punctuation">:</span><span class="token string">"&lt;ESC>"</span><span class="token punctuation">,</span><span class="token string">"2a"</span><span class="token punctuation">:</span><span class="token string">"&lt;DEL>"</span><span class="token punctuation">,</span> <span class="token string">"2b"</span><span class="token punctuation">:</span><span class="token string">"\t"</span><span class="token punctuation">,</span><span class="token string">"2c"</span><span class="token punctuation">:</span><span class="token string">"&lt;SPACE>"</span><span class="token punctuation">,</span><span class="token string">"2d"</span><span class="token punctuation">:</span><span class="token string">"-"</span><span class="token punctuation">,</span><span class="token string">"2e"</span><span class="token punctuation">:</span><span class="token string">"="</span><span class="token punctuation">,</span><span class="token string">"2f"</span><span class="token punctuation">:</span><span class="token string">"["</span><span class="token punctuation">,</span><span class="token string">"30"</span><span class="token punctuation">:</span><span class="token string">"]"</span><span class="token punctuation">,</span><span class="token string">"31"</span><span class="token punctuation">:</span><span class="token string">"\\"</span><span class="token punctuation">,</span><span class="token string">"32"</span><span class="token punctuation">:</span><span class="token string">"&lt;NON>"</span><span class="token punctuation">,</span><span class="token string">"33"</span><span class="token punctuation">:</span><span class="token string">";"</span><span class="token punctuation">,</span><span class="token string">"34"</span><span class="token punctuation">:</span><span class="token string">"'"</span><span class="token punctuation">,</span><span class="token string">"35"</span><span class="token punctuation">:</span><span class="token string">"`"</span><span class="token punctuation">,</span><span class="token string">"36"</span><span class="token punctuation">:</span><span class="token string">","</span><span class="token punctuation">,</span><span class="token string">"37"</span><span class="token punctuation">:</span><span class="token string">"."</span><span class="token punctuation">,</span><span class="token string">"38"</span><span class="token punctuation">:</span><span class="token string">"/"</span><span class="token punctuation">,</span><span class="token string">"39"</span><span class="token punctuation">:</span><span class="token string">"&lt;CAP>"</span><span class="token punctuation">,</span><span class="token string">"3a"</span><span class="token punctuation">:</span><span class="token string">"&lt;F1>"</span><span class="token punctuation">,</span><span class="token string">"3b"</span><span class="token punctuation">:</span><span class="token string">"&lt;F2>"</span><span class="token punctuation">,</span> <span class="token string">"3c"</span><span class="token punctuation">:</span><span class="token string">"&lt;F3>"</span><span class="token punctuation">,</span><span class="token string">"3d"</span><span class="token punctuation">:</span><span class="token string">"&lt;F4>"</span><span class="token punctuation">,</span><span class="token string">"3e"</span><span class="token punctuation">:</span><span class="token string">"&lt;F5>"</span><span class="token punctuation">,</span><span class="token string">"3f"</span><span class="token punctuation">:</span><span class="token string">"&lt;F6>"</span><span class="token punctuation">,</span><span class="token string">"40"</span><span class="token punctuation">:</span><span class="token string">"&lt;F7>"</span><span class="token punctuation">,</span><span class="token string">"41"</span><span class="token punctuation">:</span><span class="token string">"&lt;F8>"</span><span class="token punctuation">,</span><span class="token string">"42"</span><span class="token punctuation">:</span><span class="token string">"&lt;F9>"</span><span class="token punctuation">,</span><span class="token string">"43"</span><span class="token punctuation">:</span><span class="token string">"&lt;F10>"</span><span class="token punctuation">,</span><span class="token string">"44"</span><span class="token punctuation">:</span><span class="token string">"&lt;F11>"</span><span class="token punctuation">,</span><span class="token string">"45"</span><span class="token punctuation">:</span><span class="token string">"&lt;F12>"</span><span class="token punctuation">}</span>
+shiftKeys <span class="token operator">=</span>  <span class="token punctuation">{</span><span class="token string">"04"</span><span class="token punctuation">:</span><span class="token string">"A"</span><span class="token punctuation">,</span> <span class="token string">"05"</span><span class="token punctuation">:</span><span class="token string">"B"</span><span class="token punctuation">,</span> <span class="token string">"06"</span><span class="token punctuation">:</span><span class="token string">"C"</span><span class="token punctuation">,</span> <span class="token string">"07"</span><span class="token punctuation">:</span><span class="token string">"D"</span><span class="token punctuation">,</span> <span class="token string">"08"</span><span class="token punctuation">:</span><span class="token string">"E"</span><span class="token punctuation">,</span> <span class="token string">"09"</span><span class="token punctuation">:</span><span class="token string">"F"</span><span class="token punctuation">,</span> <span class="token string">"0a"</span><span class="token punctuation">:</span><span class="token string">"G"</span><span class="token punctuation">,</span> <span class="token string">"0b"</span><span class="token punctuation">:</span><span class="token string">"H"</span><span class="token punctuation">,</span> <span class="token string">"0c"</span><span class="token punctuation">:</span><span class="token string">"I"</span><span class="token punctuation">,</span> <span class="token string">"0d"</span><span class="token punctuation">:</span><span class="token string">"J"</span><span class="token punctuation">,</span> <span class="token string">"0e"</span><span class="token punctuation">:</span><span class="token string">"K"</span><span class="token punctuation">,</span> <span class="token string">"0f"</span><span class="token punctuation">:</span><span class="token string">"L"</span><span class="token punctuation">,</span> <span class="token string">"10"</span><span class="token punctuation">:</span><span class="token string">"M"</span><span class="token punctuation">,</span> <span class="token string">"11"</span><span class="token punctuation">:</span><span class="token string">"N"</span><span class="token punctuation">,</span> <span class="token string">"12"</span><span class="token punctuation">:</span><span class="token string">"O"</span><span class="token punctuation">,</span> <span class="token string">"13"</span><span class="token punctuation">:</span><span class="token string">"P"</span><span class="token punctuation">,</span> <span class="token string">"14"</span><span class="token punctuation">:</span><span class="token string">"Q"</span><span class="token punctuation">,</span> <span class="token string">"15"</span><span class="token punctuation">:</span><span class="token string">"R"</span><span class="token punctuation">,</span> <span class="token string">"16"</span><span class="token punctuation">:</span><span class="token string">"S"</span><span class="token punctuation">,</span> <span class="token string">"17"</span><span class="token punctuation">:</span><span class="token string">"T"</span><span class="token punctuation">,</span> <span class="token string">"18"</span><span class="token punctuation">:</span><span class="token string">"U"</span><span class="token punctuation">,</span> <span class="token string">"19"</span><span class="token punctuation">:</span><span class="token string">"V"</span><span class="token punctuation">,</span> <span class="token string">"1a"</span><span class="token punctuation">:</span><span class="token string">"W"</span><span class="token punctuation">,</span> <span class="token string">"1b"</span><span class="token punctuation">:</span><span class="token string">"X"</span><span class="token punctuation">,</span> <span class="token string">"1c"</span><span class="token punctuation">:</span><span class="token string">"Y"</span><span class="token punctuation">,</span> <span class="token string">"1d"</span><span class="token punctuation">:</span><span class="token string">"Z"</span><span class="token punctuation">,</span><span class="token string">"1e"</span><span class="token punctuation">:</span><span class="token string">"!"</span><span class="token punctuation">,</span> <span class="token string">"1f"</span><span class="token punctuation">:</span><span class="token string">"@"</span><span class="token punctuation">,</span> <span class="token string">"20"</span><span class="token punctuation">:</span><span class="token string">"#"</span><span class="token punctuation">,</span> <span class="token string">"21"</span><span class="token punctuation">:</span><span class="token string">"$"</span><span class="token punctuation">,</span> <span class="token string">"22"</span><span class="token punctuation">:</span><span class="token string">"%"</span><span class="token punctuation">,</span> <span class="token string">"23"</span><span class="token punctuation">:</span><span class="token string">"^"</span><span class="token punctuation">,</span><span class="token string">"24"</span><span class="token punctuation">:</span><span class="token string">"&amp;"</span><span class="token punctuation">,</span><span class="token string">"25"</span><span class="token punctuation">:</span><span class="token string">"*"</span><span class="token punctuation">,</span><span class="token string">"26"</span><span class="token punctuation">:</span><span class="token string">"("</span><span class="token punctuation">,</span><span class="token string">"27"</span><span class="token punctuation">:</span><span class="token string">")"</span><span class="token punctuation">,</span><span class="token string">"28"</span><span class="token punctuation">:</span><span class="token string">"&lt;RET>"</span><span class="token punctuation">,</span><span class="token string">"29"</span><span class="token punctuation">:</span><span class="token string">"&lt;ESC>"</span><span class="token punctuation">,</span><span class="token string">"2a"</span><span class="token punctuation">:</span><span class="token string">"&lt;DEL>"</span><span class="token punctuation">,</span> <span class="token string">"2b"</span><span class="token punctuation">:</span><span class="token string">"\t"</span><span class="token punctuation">,</span><span class="token string">"2c"</span><span class="token punctuation">:</span><span class="token string">"&lt;SPACE>"</span><span class="token punctuation">,</span><span class="token string">"2d"</span><span class="token punctuation">:</span><span class="token string">"_"</span><span class="token punctuation">,</span><span class="token string">"2e"</span><span class="token punctuation">:</span><span class="token string">"+"</span><span class="token punctuation">,</span><span class="token string">"2f"</span><span class="token punctuation">:</span><span class="token string">"{"</span><span class="token punctuation">,</span><span class="token string">"30"</span><span class="token punctuation">:</span><span class="token string">"}"</span><span class="token punctuation">,</span><span class="token string">"31"</span><span class="token punctuation">:</span><span class="token string">"|"</span><span class="token punctuation">,</span> <span class="token string">"32"</span><span class="token punctuation">:</span><span class="token string">"&lt;NON>"</span><span class="token punctuation">,</span><span class="token string">"33"</span><span class="token punctuation">:</span><span class="token string">":"</span><span class="token punctuation">,</span><span class="token string">"34"</span><span class="token punctuation">:</span><span class="token string">"\""</span><span class="token punctuation">,</span><span class="token string">"35"</span><span class="token punctuation">:</span><span class="token string">"~"</span><span class="token punctuation">,</span><span class="token string">"36"</span><span class="token punctuation">:</span><span class="token string">"&lt;"</span><span class="token punctuation">,</span><span class="token string">"37"</span><span class="token punctuation">:</span><span class="token string">">"</span><span class="token punctuation">,</span><span class="token string">"38"</span><span class="token punctuation">:</span><span class="token string">"?"</span><span class="token punctuation">,</span><span class="token string">"39"</span><span class="token punctuation">:</span><span class="token string">"&lt;CAP>"</span><span class="token punctuation">,</span><span class="token string">"3a"</span><span class="token punctuation">:</span><span class="token string">"&lt;F1>"</span><span class="token punctuation">,</span><span class="token string">"3b"</span><span class="token punctuation">:</span><span class="token string">"&lt;F2>"</span><span class="token punctuation">,</span> <span class="token string">"3c"</span><span class="token punctuation">:</span><span class="token string">"&lt;F3>"</span><span class="token punctuation">,</span><span class="token string">"3d"</span><span class="token punctuation">:</span><span class="token string">"&lt;F4>"</span><span class="token punctuation">,</span><span class="token string">"3e"</span><span class="token punctuation">:</span><span class="token string">"&lt;F5>"</span><span class="token punctuation">,</span><span class="token string">"3f"</span><span class="token punctuation">:</span><span class="token string">"&lt;F6>"</span><span class="token punctuation">,</span><span class="token string">"40"</span><span class="token punctuation">:</span><span class="token string">"&lt;F7>"</span><span class="token punctuation">,</span><span class="token string">"41"</span><span class="token punctuation">:</span><span class="token string">"&lt;F8>"</span><span class="token punctuation">,</span><span class="token string">"42"</span><span class="token punctuation">:</span><span class="token string">"&lt;F9>"</span><span class="token punctuation">,</span><span class="token string">"43"</span><span class="token punctuation">:</span><span class="token string">"&lt;F10>"</span><span class="token punctuation">,</span><span class="token string">"44"</span><span class="token punctuation">:</span><span class="token string">"&lt;F11>"</span><span class="token punctuation">,</span><span class="token string">"45"</span><span class="token punctuation">:</span><span class="token string">"&lt;F12>"</span><span class="token punctuation">}</span>
+nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+shifts <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+keys <span class="token operator">=</span> <span class="token function">open</span><span class="token punctuation">(</span><span class="token string">'usbdata.txt'</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> line <span class="token keyword">in</span> keys<span class="token punctuation">:</span>
+    nums<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">6</span><span class="token punctuation">:</span><span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+    shifts<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>line<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+keys<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+output <span class="token operator">=</span> <span class="token string">""</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token function">len</span><span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    n <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    s <span class="token operator">=</span> shifts<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> n <span class="token operator">==</span> <span class="token string">'00'</span> <span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+    <span class="token keyword">if</span> n <span class="token keyword">in</span> normalKeys<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> s <span class="token operator">==</span> <span class="token string">'02'</span><span class="token punctuation">:</span>
+            output <span class="token operator">+</span><span class="token operator">=</span> shiftKeys<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            output <span class="token operator">+</span><span class="token operator">=</span> normalKeys<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        output <span class="token operator">+</span><span class="token operator">=</span> <span class="token string">'[unknown'</span><span class="token operator">+</span>n<span class="token operator">+</span><span class="token string">']'</span>
+print output
+</code></pre>
+<p>运行得到</p>
+<pre class=" language-javascript"><code class="language-javascript">D'<span class="token template-string"><span class="token string">`;M?!\mZ4j8hgSvt2bN);^]+7jiE3Ve0A@Q=|;)sxwYXtsl2pongOe+LKa'e^]\a`</span></span>_X<span class="token operator">|</span>V<span class="token punctuation">[</span>Tx<span class="token punctuation">;</span><span class="token punctuation">:</span>VONSRQJn1MFKJCBfFE<span class="token operator">></span><span class="token operator">&amp;</span><span class="token operator">&lt;</span>`@<span class="token number">9</span><span class="token operator">!=</span><span class="token operator">&lt;</span>5Y9y7654<span class="token operator">-</span><span class="token punctuation">,</span>P0<span class="token operator">/</span>o<span class="token operator">-</span><span class="token punctuation">,</span><span class="token operator">%</span>I<span class="token punctuation">)</span>ih<span class="token operator">&amp;</span><span class="token operator">%</span>$#z@xw<span class="token operator">|</span><span class="token punctuation">{</span>ts9wvXWm3<span class="token operator">~</span>c
+</code></pre>
+<p>比赛中我也是做到这一步。。。然后最捞的就是我不懂这一串奇怪的东西是什么，结合题目推测应该是某种编程语言，可我压根就没见过这种奇葩的语言！！！<br>看了wp才知道这是<code>malbolge</code>，<a href="http://www.compileonline.com/execute_malbolge_online.php" target="_blank" rel="noopener">在线运行</a>。<br>还是积累得少了，吃亏在这种自己没见过世面的地方，所以记笔记！没见过这种类型是真的想不到！类似的奇葩编程语言还挺多的，正好顺便搜了些来看看，学到了！学到了！（在奇葩的路上渐行渐远）</p>
+<hr>
+<p>——2018年11月12日更新</p>
+
+            </div>
+            <hr/>
+
+            
+
+            
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://baimaozi.top" class="b-link-green">L0ner's blogs</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/11/12/ctf-gain/" class="b-link-green">每次ctf比赛后的收获</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/2018/11/12/ctf-gain/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="每次ctf比赛后的收获">
+                        
+                        <span class="card-title">每次ctf比赛后的收获</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">每个比赛都能见到很多新奇的东西和新的思路，新的解题方法，新的工具，收获挺多的（还有很多对自己菜狗的吐槽）。所以想记录下来。详细的wp我都收藏在另一篇博文里了。长期更新。
+misc
+easy dump（来自2018HCTF）easy dump</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/赛后收获/" class="post-category" target="_blank">
+                                    赛后收获
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/12/collect-wp/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="收集比赛后师傅们的writeup">
+                        
+                        <span class="card-title">收集比赛后师傅们的writeup</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">收集我参加过的比赛的writeup，方便复现的时候找。能学一点是一点，大师傅们的博客都是财富哇，空闲的时候时不时看一下。静静的做个舔狗（羡慕哇，啥时候也能成为被大家收藏的博客）长期更新。
+
+2018HCTFHCTF2018 Writeup </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/收集writeup/" class="post-category" target="_blank">
+                                    收集writeup
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"></div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
