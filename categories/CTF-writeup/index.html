@@ -5,8 +5,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="标签, L0ner&#39;s blogs">
-    <meta name="description" content="标签 | L0ner&#39;s blogs">
+    <meta name="keywords" content="分类: CTF,writeup, L0ner&#39;s blogs">
+    <meta name="description" content="分类: CTF,writeup | L0ner&#39;s blogs">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>标签 | L0ner&#39;s blogs</title>
+    <title>分类: CTF,writeup | L0ner&#39;s blogs</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -206,38 +206,22 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 
     
 
-<div id="tags" class="container chip-container">
+<div id="category-cloud" class="container chip-container">
     <div class="card">
         <div class="card-content">
-            <div class="tag-title center-align">文章标签</div>
+            <div class="tag-title center-align">文章分类</div>
             <div class="tag-chips">
                 
                 
-                <a href="/tags/文件包含漏洞/" title="文件包含漏洞: 1">
+                
+                <a href="/categories/CTF-writeup/" title="CTF,writeup: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="文件包含漏洞" style="background-color: #F9EBEA;">文件包含漏洞
-                        <span class="tag-length">1</span>
+                             chip-active "
+                            style="background-color: #F9EBEA;">CTF,writeup
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
-                
-                <a href="/tags/异或-tornado框架/" title="异或,tornado框架: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="异或,tornado框架" style="background-color: #F5EEF8;">异或,tornado框架
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/tags/咖啡壶-RFC-7168/" title="咖啡壶,RFC-7168: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            data-tagname="咖啡壶,RFC-7168" style="background-color: #D5F5E3;">咖啡壶,RFC-7168
-                        <span class="tag-length">1</span>
-                    </span>
-                </a>
                 
             </div>
         </div>
@@ -245,31 +229,145 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
 </div>
 
     
-    <link rel="stylesheet" type="text/css" href="/libs/jqcloud/jqcloud.css">
-<style type="text/css">
-    #tag-wordcloud {
-        width: 100%;
-        height: 300px;
-    }
-</style>
 
-<div class="container" data-aos="fade-up">
-    <div class="card">
-        <div id="tag-wordcloud" class="card-content"></div>
-    </div>
-</div>
+    <article id="articles" class="container articles">
+        <div class="row tags-posts">
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/11/11/2018hctf/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="2018 HCTF Warmup writeup">
+                            
+                            <span class="card-title">2018 HCTF Warmup writeup</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary">只有做这种签到题才能维持得了生活。进入题目可看到：
 
-<script type="text/javascript" src="/libs/jqcloud/jqcloud-1.0.4.min.js"></script>
-<script type="text/javascript">
-    
+点进去 hint 可看到：
 
-    $('#tag-wordcloud').jQCloud([{"text":"文件包含漏洞","weight":1,"link":"http://baimaozi.top/tags/文件包含漏洞/"},{"text":"异或,tornado框架","weight":1,"link":"http://baimaozi.top/tags/异或-tornado框架/"},{"text":"咖啡壶,RFC-7168","weight":1,"link":"http://baimaozi.top/tags/咖啡壶-RFC-7168/"}], {
-        autoResize: true
-    });
-</script>
-    
+这个url有个很明显的文件包含，推测是文件包含漏洞。然后</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF-writeup/" class="post-category" target="_blank">
+                                    CTF,writeup
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
 
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/文件包含漏洞/" target="_blank">
+                            <span class="chip bg-color">文件包含漏洞</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/10/15/huwangbei/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="“护网杯”部分题writeup">
+                            
+                            <span class="card-title">“护网杯”部分题writeup</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary">迟来的签到题描述是“easy xor???”，提示这题需要用异或。下载一个txt文件，打开后里面有一串字符：
+AAoHAR0nJ1YlUVQ</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF-writeup/" class="post-category" target="_blank">
+                                    CTF,writeup
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/异或-tornado框架/" target="_blank">
+                            <span class="chip bg-color">异或,tornado框架</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/10/12/whoami/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Hackergame 2018 我是谁writeip">
+                            
+                            <span class="card-title">Hackergame 2018 我是谁writeip</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary">这一题有两关题目描述打开题目随便点击Submit提交点东西，都是显示相同的东西。应该是提交得不对，还得找出正确的“我”出来。先看看源码，里头</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/CTF-writeup/" class="post-category" target="_blank">
+                                    CTF,writeup
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/咖啡壶-RFC-7168/" target="_blank">
+                            <span class="chip bg-color">咖啡壶,RFC-7168</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
 </main>
+
 
 <footer class="page-footer bg-color">
     <div class="container row center-align">
