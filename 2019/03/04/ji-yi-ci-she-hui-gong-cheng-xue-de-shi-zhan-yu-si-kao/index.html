@@ -1,0 +1,551 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="记一次社会工程学的实战应用以及思考, L0ner&#39;s blogs">
+    <meta name="description" content="（本文为信息安全选修课的大作业，在老师的要求下就写得比较正式，有点不爽，还是喜欢博客形式的随心所欲。以下为全文）
+
+摘要：在互联网技术高速发展的时代，我们的信息安全越来越难以保障，个人隐私泄露导致的财产安全问题也越来越频繁发生。黑客们层出不">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>记一次社会工程学的实战应用以及思考 | L0ner&#39;s blogs</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">L0ner's blogs</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>Index</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>Tags</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>Categories</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>Archives</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>About</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">L0ner's blogs</div>
+        <div class="logo-desc">
+            
+            Believe myself !
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                Index
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                Tags
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                Categories
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                Archives
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                About
+            </a>
+        </li>
+        
+        
+    </ul>
+
+    <div class="social-link"></div>
+</div>
+
+            </div>
+        </div>
+
+        
+    </nav>
+</header>
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        记一次社会工程学的实战应用以及思考
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/社工-WiFi/" target="_blank">
+                    <span class="chip bg-color">社工,WiFi</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/随笔/" class="post-category" target="_blank">
+                        随笔
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2019-03-04
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>（本文为信息安全选修课的大作业，在老师的要求下就写得比较正式，有点不爽，还是喜欢博客形式的随心所欲。以下为全文）</p>
+<hr>
+<p>摘要：在互联网技术高速发展的时代，我们的信息安全越来越难以保障，个人隐私泄露导致的财产安全问题也越来越频繁发生。黑客们层出不穷的攻击方式使我们疲于应对，如今更是将网络攻击技术与社会工程学相结合起来，分别从系统和人性两个层面对我们进行入侵，这类攻击方式对于普通人而言极难进行防御，对我们安全人员更是提出了新的挑战。本文记录了一次运用社会工程学的攻击实战，提出了笔者的见解与拓展思考。</p>
+<h2 id="一、-引言："><a href="#一、-引言：" class="headerlink" title="一、    引言："></a>一、    引言：</h2><p>本着“知己知彼，百战不殆”的学习的态度，笔者将模拟一次利用社会工程学来获取被攻击者账号密码的实验，从攻击者的角度来进行学习探究，以及对攻击方式的优化，加深对社会工程学的认识，帮助我们防范此类攻击。</p>
+<h2 id="二、相关技术及原理："><a href="#二、相关技术及原理：" class="headerlink" title="二、相关技术及原理："></a>二、相关技术及原理：</h2><h3 id="一-什么是社会工程学？"><a href="#一-什么是社会工程学？" class="headerlink" title="(一)什么是社会工程学？"></a>(一)什么是社会工程学？</h3><p>社会工程学是一种通过对被攻击者的心理弱点、本能反应以及好奇心、信任、贪婪等心理陷阱进行的诸如欺骗、伤害等危害手段，获取非法利益的行为。</p>
+<h3 id="二-Aircrack-ng简介："><a href="#二-Aircrack-ng简介：" class="headerlink" title="(二) Aircrack-ng简介："></a>(二) Aircrack-ng简介：</h3><p>Aircrack-ng是一个与802.11标准的无线网络分析有关的安全软件。<br>主要功能有：<br>1.网络侦测<br>2.数据包嗅探<br>3.WEP和WPA/WPA2-PSK破解</p>
+<h3 id="三-WIFI-Pumpkin简介："><a href="#三-WIFI-Pumpkin简介：" class="headerlink" title="(三) WIFI-Pumpkin简介："></a>(三) WIFI-Pumpkin简介：</h3><p>WiFi-Pumpkin是一款无线安全检测工具，利用该工具可以伪造接入点完成中间人攻击，同时也支持一些其它的无线渗透功能。旨在提供更安全的无线网络服务，该工具可用来监听目标的流量数据，通过无线钓鱼的方式来捕获不知情的用户，以此来达到监控目标用户数据流量的目的。<br>主要功能：<br>1.Rouge Wi-Fi接入点功能<br>2.Deauth攻击目标客户端AP功能<br>3.探测请求监测功能<br>4.Crendentials凭证监视功能<br>5.DHCP攻击<br>6.虚假的MAC地址广播DHCP请求攻击<br>7.HSTS劫持攻击功能<br>8.支持 airodump扫描检测功能<br>9.支持mkd3洪水攻击<br>10.支持beef hook功能<br>11.可生成html日志<br>12.支持Mac地址变换功能<br>13.支持ARP攻击<br>14.支持DNS欺骗功能</p>
+<h2 id="三、实战过程："><a href="#三、实战过程：" class="headerlink" title="三、实战过程："></a>三、实战过程：</h2><p>本次实战笔者先从窃取wifi密码入手，原因除了wifi能经常接触到，容易被盗取还有其他原因之后会说明。普通窃取wifi密码的方式（非社工）大致就是获取wifi握手包，然后用字典来进行暴力破解，因为弱口令密码一直以来都是很容易忽略的问题，甚至很多路由器wifi密码还是出厂设置的“admin”，“最简单的往往就是最有效的”是对弱口令最好的诠释。实战所使用到的工具有：笔记本，无线网卡，虚拟机的kali linux系统。</p>
+<p>笔者将首先使用aircrack-ng来进行攻击。在kali下开启网卡监听模式来监听周围的wifi状态，然后选择要破解的wifi来进行监听。这里笔者为了便于测试就自己用手机开了一个wifi热点，然后用电脑进行连接，模拟正常环境中的状态。针对要破解的wifi发送一个断开命令，强制断开连接的设备，这时候电脑就会重新连接，就可以捕获电脑连接wifi时的握手包，也就是俗称的“抓包”。接着笔者用已经准备好的字典来进行暴力破解，当然为了能更快的跑出密码来，笔者这里的wifi使用了弱口令。至此，一个简单的窃取wifi实战已经完成。</p>
+<p>然而这只是个最简单的、在理想环境下的窃取wifi。实际中所遇到的问题可就太多了，比如网络信号不好，渗透工具不好使，被攻击者所使用的wifi密码不是弱口令等等问题。其中从技术角度来看，最难的部分笔者认为是非弱口令密码的破解问题，只要改个有字母数字符号的长密码，即使用几十G的字典也很难跑出来，还花费大量时间。倘若是结合社会工程学来进行攻击，那就简单多了。可以搭建个钓鱼wifi伪装成正常的wifi，让被攻击者误连接上钓鱼wifi，此时就能直接获取wifi的明文密码。这就相当于被攻击者自己把密码告诉了攻击者，而他自己却还浑然不知，攻击者获取了对方的信任。利用人性的弱点，这就是社会工程学的可怕之处，也是难以防御的原因。</p>
+<p>黑客们使用钓鱼手段通常是在以下场景：在网吧，奶茶店等公共场所连接上wifi后会跳转到一个认证的登录页面，在这个登录页面的要输入账号密码才能进行上网。接下来笔者将使用WIFI-Pumpkin来创建钓鱼wifi来窃取账号密码。在kali下打开wifi-pumpkin并设置好相应的参数后运行，用手机就能看到已经出现了一个新的wifi名“PumpAP”，我们可以将这个名字修改成“CMCC”等看上去可信度更高的名字。接着笔者使用dns欺骗的攻击方式，即被攻击者要访问某个网站，实际上他访问的是攻击者指定的ip地址。攻击者若是再将ip地址使用个高仿的域名和页面，就能以假乱真，使被攻击者乖乖的交出自己登陆认证的账号密码。在WiFi-Pumpkin里有个已经做好的钓鱼登录页面模板，笔者把它放入相应的目录，以及连接上mysql数据库就能使用了。然后被攻击者在这个页面下输入的任何数据都能在WiFi-Pumpkin看得一清二楚。输入账号密码后会重定向到真实的页面以迷惑被攻击者。</p>
+<p>笔者想到了本学校的校园网也是这样的登录认证方式，那么应该也可以用这种社工的方式来获取同学们校园网的账号密码。不过学校的安全性做得比较好，笔者在对校园网页面进行克隆时发现输入账号密码的地方竟然是用js渲染的，用工具快速克隆出的网站并不能输入，也就是个“死”界面。得自己手工来写出一个高仿的前端页面才行，工具已经派不上用场，这就加大了攻击难度。在攻击收益远小于攻击难度后，相信大多数攻击者也就不会再实施攻击了。</p>
+<p>以上就是笔者本次对社会工程学的研究与思考，了解了社工的原理后，也就没有必要再害怕它，它就像是一把武器，我们学会使用它，今后就可将锋利的武器变成我们强有力的盾牌。</p>
+<h2 id="四、结论："><a href="#四、结论：" class="headerlink" title="四、结论："></a>四、结论：</h2><p>1.设置一个强密码是很重要的，这是防备网络攻击的最简单的方式之一。<br>2.最好不要连公共场所的未知wifi，因为这很有可能是黑客在进行钓鱼。<br>3.提高警惕之心，在登录界面的任何一次输入账号密码都有可能被窃取，可以试着输入错误的账号密码来进行试探，假如是钓鱼页面则不会提示密码错误之类的而是重定向到一个页面，一般会跳转到真实页面（但也不排除黑客将任何输入都回显出错误的情况）</p>
+
+            </div>
+            <hr/>
+
+            
+
+            
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="http://baimaozi.top" class="b-link-green">L0ner's blogs</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2019/03/04/ji-yi-ci-she-hui-gong-cheng-xue-de-shi-zhan-yu-si-kao/" class="b-link-green">记一次社会工程学的实战应用以及思考</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="card">
+                <a href="/2019/03/04/ji-yi-ci-she-hui-gong-cheng-xue-de-shi-zhan-yu-si-kao/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="记一次社会工程学的实战应用以及思考">
+                        
+                        <span class="card-title">记一次社会工程学的实战应用以及思考</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">（本文为信息安全选修课的大作业，在老师的要求下就写得比较正式，有点不爽，还是喜欢博客形式的随心所欲。以下为全文）
+
+摘要：在互联网技术高速发展的时代，我们的信息安全越来越难以保障，个人隐私泄露导致的财产安全问题也越来越频繁发生。黑客们层出不</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-03-04
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/随笔/" class="post-category" target="_blank">
+                                    随笔
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/社工-WiFi/" target="_blank">
+                        <span class="chip bg-color">社工,WiFi</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/11/12/ctf-gain/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="每次ctf比赛后的收获">
+                        
+                        <span class="card-title">每次ctf比赛后的收获</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">每个比赛都能见到很多新奇的东西和新的思路，新的解题方法，新的工具，收获挺多的（还有很多对自己菜狗的吐槽）。所以想记录下来。详细的wp我都收藏在另一篇博文里了。长期更新。
+misc
+easy dump（来自2018HCTF）easy dump</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-11-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/赛后收获/" class="post-category" target="_blank">
+                                    赛后收获
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="https://blinkfox.github.io/" target="_blank">Blinkfox</a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 采用
+            <a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>的主题搭建.
+        </div>
+        <div class="col s12 m4 l4 social-link"></div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input" autofocus="">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+</body>
+</html>
